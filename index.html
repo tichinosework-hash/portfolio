@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Works — 個人開発プロダクト</title>
+<meta name="description" content="AI × 業務自動化を中心に、ひとりで設計・開発・運用しているプロダクト群。" />
+<meta name="robots" content="noindex" />
+<meta property="og:title" content="Works — 個人開発プロダクト" />
+<meta property="og:description" content="AI × 業務自動化を中心に、ひとりで設計・開発・運用しているプロダクト群。" />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg-page: #F0F2F5;
+    --bg-card: #FFFFFF;
+    --primary: #4F46E5;
+    --primary-light: #EEF2FF;
+    --success: #10B981;
+    --warning: #F59E0B;
+    --orange: #FF7A1A;
+    --text-primary: #111827;
+    --text-secondary: #6B7280;
+    --text-muted: #9CA3AF;
+    --border: #E5E7EB;
+    --border-light: #F3F4F6;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", sans-serif;
+    background: var(--bg-page);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 56px 32px 80px; }
+
+  /* Header */
+  .label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px;
+  }
+  .label .dot { color: var(--orange); }
+  h1 { font-size: 34px; font-weight: 700; letter-spacing: -0.02em; }
+  .tagline { font-size: 16px; color: var(--text-secondary); margin-top: 14px; max-width: 640px; }
+
+  .stats { display: flex; gap: 40px; margin-top: 32px; flex-wrap: wrap; }
+  .stat .num { font-size: 32px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .stat .num span { color: var(--primary); }
+  .stat .cap { font-size: 12px; font-weight: 500; color: var(--text-secondary); margin-top: 2px; }
+
+  /* Filters */
+  .filters { display: flex; gap: 8px; margin: 44px 0 24px; flex-wrap: wrap; }
+  .pill {
+    font-size: 13px; font-weight: 500; padding: 7px 16px; border-radius: 999px;
+    border: 1px solid var(--border); background: var(--bg-card); color: var(--text-secondary);
+    cursor: pointer; transition: all .15s ease;
+  }
+  .pill:hover { border-color: var(--primary-light); color: var(--text-primary); }
+  .pill.active { background: var(--primary); border-color: var(--primary); color: #fff; box-shadow: 0 1px 2px rgba(79,70,229,.3); }
+
+  /* Grid */
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } .wrap { padding: 40px 20px 64px; } h1 { font-size: 27px; } }
+
+  .card {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
+    padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,.04), 0 1px 2px rgba(0,0,0,.02);
+    transition: box-shadow .18s ease, border-color .18s ease, transform .18s ease;
+    display: flex; flex-direction: column; min-height: 196px;
+  }
+  .card:hover { box-shadow: 0 6px 18px rgba(0,0,0,.09); border-color: var(--primary-light); transform: translateY(-2px); }
+
+  .card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+  .emoji {
+    width: 44px; height: 44px; border-radius: 12px; background: var(--primary-light);
+    display: grid; place-items: center; font-size: 22px;
+  }
+  .badge {
+    font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 999px; border: 1px solid;
+    display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+  }
+  .badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; }
+  .badge.active  { background:#ECFDF5; color:#047857; border-color:#A7F3D0; }
+  .badge.active::before  { background: var(--success); }
+  .badge.deployed{ background:#EFF6FF; color:#1D4ED8; border-color:#BFDBFE; }
+  .badge.deployed::before{ background:#3B82F6; }
+  .badge.building{ background:#FFF7ED; color:#C2410C; border-color:#FED7AA; }
+  .badge.building::before{ background: var(--orange); }
+
+  .card h3 { font-size: 16px; font-weight: 600; }
+  .card p { font-size: 13px; color: var(--text-secondary); margin-top: 8px; flex: 1; }
+
+  .card-foot { display: flex; align-items: center; justify-content: space-between; margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border-light); }
+  .cat { font-size: 11px; font-weight: 600; letter-spacing: .04em; color: var(--text-muted); text-transform: uppercase; }
+  .open { font-size: 13px; font-weight: 600; color: var(--primary); text-decoration: none; display: inline-flex; align-items: center; gap: 4px; }
+  .open:hover { text-decoration: underline; }
+  .open.disabled { color: var(--text-muted); pointer-events: none; }
+
+  footer { margin-top: 64px; padding-top: 28px; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-muted); }
+  footer .built { color: var(--text-secondary); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="label">Portfolio <span class="dot">●</span></div>
+    <h1>個人開発プロダクト</h1>
+    <p class="tagline">AI × 業務自動化を中心に、ひとりで企画・設計・開発・運用までやっているプロダクト群。ほとんどが Claude Code を使った自作で、生成 AI を「現場の業務」に落とし込むことをテーマにしています。</p>
+    <div class="stats">
+      <div class="stat"><div class="num"><span>15</span></div><div class="cap">プロダクト</div></div>
+      <div class="stat"><div class="num"><span>11</span></div><div class="cap">ライブデモ公開</div></div>
+      <div class="stat"><div class="num"><span>1</span> 人</div><div class="cap">で開発・運用</div></div>
+    </div>
+  </header>
+
+  <nav class="filters" id="filters">
+    <button class="pill active" data-f="all">すべて</button>
+    <button class="pill" data-f="ec">EC・コマース</button>
+    <button class="pill" data-f="diag">診断・分析</button>
+    <button class="pill" data-f="doc">資料・ツール</button>
+    <button class="pill" data-f="hobby">ホビー・実験</button>
+  </nav>
+
+  <section class="grid" id="grid">
+
+    <article class="card" data-cat="ec">
+      <div class="card-top"><div class="emoji">🛍️</div><span class="badge active">稼働中</span></div>
+      <h3>ShopPilot</h3>
+      <p>Shopify Storefront API に接続し、ストアを丸ごと AI 診断。Today's Actions / Store Score / Product Doctor で「次に何を直すか」を提示。</p>
+      <div class="card-foot"><span class="cat">EC</span><a class="open" href="https://shoppilot.apps.taigi-i.com" target="_blank" rel="noopener">デモを開く →</a></div>
+    </article>
+
+    <article class="card" data-cat="diag">
+      <div class="card-top"><div class="emoji">🔍</div><span class="badge active">稼働中</span></div>
+      <h3>ServiceLens</h3>
+      <p>任意の Web サービス URL から、ペルソナ・価値・課題・成長戦略・競合を自動診断。5 軸スコアレーダー＋2 サービス比較＋OGP 自動生成。</p>
+      <div class="card-foot"><span class="cat">診断</span><a class="open" href="https://servicelens.apps.taigi-i.com" target="_blank" rel="noopener">デモを開く →</a></div>
+    </article>
+
+    <article class="card" data-cat="ec">
+      <div class="card-top"><div class="emoji">🌱</div><span class="badge deployed">デプロイ済</span></div>
+      <h3>ShopMint</h3>
+      <p>ヒアリング 10 問を入れるだけで、商談用の Shopify デモストアを 30 分で生成。食品・アパレル・コスメ・雑貨・酒類の業種パック内蔵。</p>
+      <div class="card-foot"><span class="cat">EC</span><a class="open" href="https://shopmint.apps.taigi-i.com" target="_blank" rel="noopener">デモを開く →</a></div>
+    </article>
+
+    <article class="card" data-cat="ec">
+      <div class="card-top"><div class="emoji">✍️</div><span class="badge active">稼働中</span></div>
+      <h3>AI Product Description Generator</h3>
+      <p>商品画像をアップするだけで、SEO を意識した商品説明文を数秒で生成。薬機法・景表法のリスク表現もチェック。</p>
+      <div class="card-foot"><span class="cat">EC</span><a class="open" href="https://ai-product-desc-gen.apps.taigi-i.com" target="_blank" rel="noopener">デモを開く →</a></div>
+    </article>
+
+    <article class="card" data-cat="diag">
+      <div class="card-top"><div class="emoji">📊</div><span class="badge active">稼働中</span></div>
+      <h3>EC AI 導入レディネス診断</h3>
+      <p>10 問に答えると、EC 店舗の AI 活用度をスコア化し、導入の優先度マップを PDF で出力。どこから AI を入れるべきかを可視化。</p>
+      <div class="card-foot"><span class="cat">診断</span><a class="open" href="https://ec-ai-readiness.apps.taigi-i.com" target="_blank" rel="noopener">デモを開く →</a></div>
+    </article>
+
+    <article class="card" data-cat="ec">
+      <div class="card-top"><div class="emoji">💬</div><span class="badge active">稼働中</span></div>
+      <h3>Review Reply AI</h3>
+      <p>Google / 楽天 / Amazon のレビューに対する、プロ品質の返信文を業種別に自動生成。クレーム・高評価それぞれのトーンに対応。</p>
+      <div class="card-foot"><span class="cat">EC</span><a class="open" href="https://review-reply-ai.apps.taigi-i.com" target="_blank" rel="noopener">デモを開く →</a></div>
+    </article>
+
+    <article class="card" data-cat="ec">
+      <div class="card-top"><div class="emoji">📄</div><span class="badge deployed">デプロイ済</span></div>
+      <h3>Review to LP</h3>
+      <p>Google マップ URL や楽天商品 URL からレビューを解析し、お客様の声を軸にした LP を自動生成。</p>
+      <div class="card-foot"><span class="cat">EC</span><a class="open" href="https://review-to-lp.apps.taigi-i.com" target="_blank" rel="noopener">デモを開く →</a></div>
+    </article>
+
+    <article class="card" data-cat="ec">
+      <div class="card-top"><div class="emoji">🔬</div><span class="badge building">開発中</span></div>
+      <h3>DeepLook</h3>
+      <p>URL 1 本で 125 ページ級の EC 初期分析レポートを自動生成。競合プロファイル・課題分析・戦略ロードマップ・売上シミュレーションまで。</p>
+      <div class="card-foot"><span class="cat">EC</span><span class="open disabled">公開準備中</span></div>
+    </article>
+
+    <article class="card" data-cat="doc">
+      <div class="card-top"><div class="emoji">📐</div><span class="badge active">稼働中</span></div>
+      <h3>slides2pptx</h3>
+      <p>slides.js の JSON を、編集可能な PPTX に変換する API。Cloudflare Workers で動作し、運用コスト月額 ¥0。</p>
+      <div class="card-foot"><span class="cat">ツール</span><a class="open" href="https://slides2pptx.t-ichinose-work.workers.dev" target="_blank" rel="noopener">デモを開く →</a></div>
+    </article>
+
+    <article class="card" data-cat="doc">
+      <div class="card-top"><div class="emoji">🖼️</div><span class="badge building">開発中</span></div>
+      <h3>HTML to PPTX</h3>
+      <p>HTML+CSS を貼り付けると、テキスト・図形・画像すべて編集可能な PPTX をダウンロード。外部 API 不要でローカル完結。</p>
+      <div class="card-foot"><span class="cat">ツール</span><a class="open" href="https://html2pptx.apps.taigi-i.com" target="_blank" rel="noopener">デモを開く →</a></div>
+    </article>
+
+    <article class="card" data-cat="doc">
+      <div class="card-top"><div class="emoji">🎛️</div><span class="badge building">開発中</span></div>
+      <h3>DeckStudio</h3>
+      <p>チャットでスライドデッキを生成 → 4 テーマでワンクリック切替 → Present モード → Speaker Notes まで、ブラウザだけで完結する制作スタジオ。</p>
+      <div class="card-foot"><span class="cat">ツール</span><a class="open" href="https://deckstudio.apps.taigi-i.com" target="_blank" rel="noopener">デモを開く →</a></div>
+    </article>
+
+    <article class="card" data-cat="hobby">
+      <div class="card-top"><div class="emoji">⛳</div><span class="badge active">稼働中</span></div>
+      <h3>ゴルフキャディアプリ</h3>
+      <p>GPS で次のホールまでの残り距離をリアルタイム計測する PWA。スマホにインストールして使える個人開発のホビープロジェクト。</p>
+      <div class="card-foot"><span class="cat">ホビー</span><a class="open" href="https://tichinosework-hash.github.io/golf-caddie/" target="_blank" rel="noopener">デモを開く →</a></div>
+    </article>
+
+    <article class="card" data-cat="hobby">
+      <div class="card-top"><div class="emoji">🎬</div><span class="badge deployed">制作物</span></div>
+      <h3>Remotion 動画テンプレート集</h3>
+      <p>React で動画を生成する Remotion のテンプレを 7 種自作。Apple Keynote 風・サイバーパンク端末・データビジュアライズ・キネティックタイポ など。</p>
+      <div class="card-foot"><span class="cat">実験</span><span class="open disabled">デモ非公開</span></div>
+    </article>
+
+    <article class="card" data-cat="doc">
+      <div class="card-top"><div class="emoji">🎨</div><span class="badge deployed">制作物</span></div>
+      <h3>artstudio</h3>
+      <p>HTML アーティファクトの要素をクリック → 自然言語で「ここをこう変えて」と指示すると、その場で書き換わるビジュアルエディタ。</p>
+      <div class="card-foot"><span class="cat">ツール</span><span class="open disabled">ローカルツール</span></div>
+    </article>
+
+    <article class="card" data-cat="hobby">
+      <div class="card-top"><div class="emoji">📱</div><span class="badge deployed">制作物</span></div>
+      <h3>Mobile Preview 拡張</h3>
+      <p>ワンクリックで Web ページをスマホ表示プレビューする Chrome 拡張。デバイスフレーム付き・回転・スクショ対応。</p>
+      <div class="card-foot"><span class="cat">実験</span><span class="open disabled">拡張機能</span></div>
+    </article>
+
+  </section>
+
+  <footer>
+    <div class="built">Built solo with Claude Code — AI を使った業務自動化プロダクトを継続的に開発・公開しています。</div>
+    <div style="margin-top:6px;">※ 掲載しているのは個人で制作・運用しているプロダクトです。</div>
+  </footer>
+</div>
+
+<script>
+  const pills = document.querySelectorAll('.pill');
+  const cards = document.querySelectorAll('.card');
+  pills.forEach(p => p.addEventListener('click', () => {
+    pills.forEach(x => x.classList.remove('active'));
+    p.classList.add('active');
+    const f = p.dataset.f;
+    cards.forEach(c => {
+      c.style.display = (f === 'all' || c.dataset.cat === f) ? 'flex' : 'none';
+    });
+  }));
+</script>
+</body>
+</html>
