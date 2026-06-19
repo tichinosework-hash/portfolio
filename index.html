@@ -91,6 +91,8 @@
   .badge.deployed::before{ background:#3B82F6; }
   .badge.building{ background:#FFF7ED; color:#C2410C; border-color:#FED7AA; }
   .badge.building::before{ background: var(--orange); }
+  .badge.prep{ background:#F3F4F6; color:#6B7280; border-color:#E5E7EB; }
+  .badge.prep::before{ background: var(--text-muted); }
 
   .card h3 { font-size: 16px; font-weight: 600; }
   .card p { font-size: 13px; color: var(--text-secondary); margin-top: 8px; flex: 1; }
@@ -113,7 +115,7 @@
     <p class="tagline">AI × 業務自動化を中心に、ひとりで企画・設計・開発・運用までやっているプロダクト群。ほとんどが Claude Code を使った自作で、生成 AI を「現場の業務」に落とし込むことをテーマにしています。</p>
     <div class="stats">
       <div class="stat"><div class="num"><span>15</span></div><div class="cap">プロダクト</div></div>
-      <div class="stat"><div class="num"><span>11</span></div><div class="cap">ライブデモ公開</div></div>
+      <div class="stat"><div class="num"><span>2</span></div><div class="cap">公開デモ稼働中</div></div>
       <div class="stat"><div class="num"><span>1</span> 人</div><div class="cap">で開発・運用</div></div>
     </div>
   </header>
@@ -129,52 +131,52 @@
   <section class="grid" id="grid">
 
     <article class="card" data-cat="ec">
-      <div class="card-top"><div class="emoji">🛍️</div><span class="badge active">稼働中</span></div>
+      <div class="card-top"><div class="emoji">🛍️</div><span class="badge prep">準備中</span></div>
       <h3>ShopPilot</h3>
       <p>Shopify Storefront API に接続し、ストアを丸ごと AI 診断。Today's Actions / Store Score / Product Doctor で「次に何を直すか」を提示。</p>
-      <div class="card-foot"><span class="cat">EC</span><a class="open" href="https://shoppilot.apps.taigi-i.com" target="_blank" rel="noopener">デモを開く →</a></div>
+      <div class="card-foot"><span class="cat">EC</span><span class="open disabled">準備中</span></div>
     </article>
 
     <article class="card" data-cat="diag">
-      <div class="card-top"><div class="emoji">🔍</div><span class="badge active">稼働中</span></div>
+      <div class="card-top"><div class="emoji">🔍</div><span class="badge prep">準備中</span></div>
       <h3>ServiceLens</h3>
       <p>任意の Web サービス URL から、ペルソナ・価値・課題・成長戦略・競合を自動診断。5 軸スコアレーダー＋2 サービス比較＋OGP 自動生成。</p>
-      <div class="card-foot"><span class="cat">診断</span><a class="open" href="https://servicelens.apps.taigi-i.com" target="_blank" rel="noopener">デモを開く →</a></div>
+      <div class="card-foot"><span class="cat">診断</span><span class="open disabled">準備中</span></div>
     </article>
 
     <article class="card" data-cat="ec">
-      <div class="card-top"><div class="emoji">🌱</div><span class="badge deployed">デプロイ済</span></div>
+      <div class="card-top"><div class="emoji">🌱</div><span class="badge prep">準備中</span></div>
       <h3>ShopMint</h3>
       <p>ヒアリング 10 問を入れるだけで、商談用の Shopify デモストアを 30 分で生成。食品・アパレル・コスメ・雑貨・酒類の業種パック内蔵。</p>
-      <div class="card-foot"><span class="cat">EC</span><a class="open" href="https://shopmint.apps.taigi-i.com" target="_blank" rel="noopener">デモを開く →</a></div>
+      <div class="card-foot"><span class="cat">EC</span><span class="open disabled">準備中</span></div>
     </article>
 
     <article class="card" data-cat="ec">
-      <div class="card-top"><div class="emoji">✍️</div><span class="badge active">稼働中</span></div>
+      <div class="card-top"><div class="emoji">✍️</div><span class="badge prep">準備中</span></div>
       <h3>AI Product Description Generator</h3>
       <p>商品画像をアップするだけで、SEO を意識した商品説明文を数秒で生成。薬機法・景表法のリスク表現もチェック。</p>
-      <div class="card-foot"><span class="cat">EC</span><a class="open" href="https://ai-product-desc-gen.apps.taigi-i.com" target="_blank" rel="noopener">デモを開く →</a></div>
+      <div class="card-foot"><span class="cat">EC</span><span class="open disabled">準備中</span></div>
     </article>
 
     <article class="card" data-cat="diag">
-      <div class="card-top"><div class="emoji">📊</div><span class="badge active">稼働中</span></div>
+      <div class="card-top"><div class="emoji">📊</div><span class="badge prep">準備中</span></div>
       <h3>EC AI 導入レディネス診断</h3>
       <p>10 問に答えると、EC 店舗の AI 活用度をスコア化し、導入の優先度マップを PDF で出力。どこから AI を入れるべきかを可視化。</p>
-      <div class="card-foot"><span class="cat">診断</span><a class="open" href="https://ec-ai-readiness.apps.taigi-i.com" target="_blank" rel="noopener">デモを開く →</a></div>
+      <div class="card-foot"><span class="cat">診断</span><span class="open disabled">準備中</span></div>
     </article>
 
     <article class="card" data-cat="ec">
-      <div class="card-top"><div class="emoji">💬</div><span class="badge active">稼働中</span></div>
+      <div class="card-top"><div class="emoji">💬</div><span class="badge prep">準備中</span></div>
       <h3>Review Reply AI</h3>
       <p>Google / 楽天 / Amazon のレビューに対する、プロ品質の返信文を業種別に自動生成。クレーム・高評価それぞれのトーンに対応。</p>
-      <div class="card-foot"><span class="cat">EC</span><a class="open" href="https://review-reply-ai.apps.taigi-i.com" target="_blank" rel="noopener">デモを開く →</a></div>
+      <div class="card-foot"><span class="cat">EC</span><span class="open disabled">準備中</span></div>
     </article>
 
     <article class="card" data-cat="ec">
-      <div class="card-top"><div class="emoji">📄</div><span class="badge deployed">デプロイ済</span></div>
+      <div class="card-top"><div class="emoji">📄</div><span class="badge prep">準備中</span></div>
       <h3>Review to LP</h3>
       <p>Google マップ URL や楽天商品 URL からレビューを解析し、お客様の声を軸にした LP を自動生成。</p>
-      <div class="card-foot"><span class="cat">EC</span><a class="open" href="https://review-to-lp.apps.taigi-i.com" target="_blank" rel="noopener">デモを開く →</a></div>
+      <div class="card-foot"><span class="cat">EC</span><span class="open disabled">準備中</span></div>
     </article>
 
     <article class="card" data-cat="ec">
@@ -192,17 +194,17 @@
     </article>
 
     <article class="card" data-cat="doc">
-      <div class="card-top"><div class="emoji">🖼️</div><span class="badge building">開発中</span></div>
+      <div class="card-top"><div class="emoji">🖼️</div><span class="badge prep">準備中</span></div>
       <h3>HTML to PPTX</h3>
       <p>HTML+CSS を貼り付けると、テキスト・図形・画像すべて編集可能な PPTX をダウンロード。外部 API 不要でローカル完結。</p>
-      <div class="card-foot"><span class="cat">ツール</span><a class="open" href="https://html2pptx.apps.taigi-i.com" target="_blank" rel="noopener">デモを開く →</a></div>
+      <div class="card-foot"><span class="cat">ツール</span><span class="open disabled">準備中</span></div>
     </article>
 
     <article class="card" data-cat="doc">
-      <div class="card-top"><div class="emoji">🎛️</div><span class="badge building">開発中</span></div>
+      <div class="card-top"><div class="emoji">🎛️</div><span class="badge prep">準備中</span></div>
       <h3>DeckStudio</h3>
       <p>チャットでスライドデッキを生成 → 4 テーマでワンクリック切替 → Present モード → Speaker Notes まで、ブラウザだけで完結する制作スタジオ。</p>
-      <div class="card-foot"><span class="cat">ツール</span><a class="open" href="https://deckstudio.apps.taigi-i.com" target="_blank" rel="noopener">デモを開く →</a></div>
+      <div class="card-foot"><span class="cat">ツール</span><span class="open disabled">準備中</span></div>
     </article>
 
     <article class="card" data-cat="hobby">
